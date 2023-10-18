@@ -1,4 +1,4 @@
-import LoginForm from "@/components/LoginForm";
+import LoginForm from "@/components/loginForm";
 import Image from "next/image";
 
 export default function Login() {
@@ -42,7 +42,7 @@ export default function Login() {
           <img
             className="relative  h-[2.12rem] object-cover"
             alt=""
-            src="/images/image-13@2x.png"
+            src="/images/companyLogo.png"
           />
         </div>
 

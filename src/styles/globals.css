@@ -5,6 +5,7 @@
 @tailwind utilities;
 body {
   @apply leading-[normal] m-0;
+  @apply font-px;
 }
 
 a{
