@@ -5,11 +5,18 @@
 @tailwind utilities;
 body {
   @apply leading-[normal] m-0;
-  @apply font-px;
+  @apply font-lexend;
+  font-family: "Lexend Deca", sans-serif;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
 }
 
-a{
+a {
   text-decoration: none;
+}
+
+input:focus {
+  outline: none;
 }
 
 *,
