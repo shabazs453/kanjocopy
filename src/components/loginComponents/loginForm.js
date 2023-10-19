@@ -27,7 +27,7 @@ const InputField = ({
             name={name}
             value={value}
             onChange={onChange}
-            className="h-full w-full px-0 pb-0 bg-transparent border-none focus:outline-none focus:outline-offset-0 relative text-[1rem] leading-[1rem]"
+            className="h-full w-full px-0 pb-0 bg-transparent border-none focus:outline-none focus:outline-offset-0 relative text-[1rem] leading-[1rem] font-semibold font-lexend"
           />
         </label>
       </div>
@@ -86,10 +86,10 @@ export default function LoginForm() {
         />
       </div>
       <div className="w-full flex flex-col items-center px-4 sm:px-10 lg:px-12">
-        <div className="text-[1.63rem] text-text_default">
+        <div className="text-base text-text_default">
           <div className="relative font-semibold">Welcome to Kanjo</div>
         </div>
-        <div className=" text-sm mt-2 text-text_secondary">
+        <div className=" text-sm mt-2 text-text_secondary text-center">
           <p>
             Lorem ipsum dolor sit amet consectetur. Ac in consequat sodales in
             ante in gravida lobortis.
@@ -129,7 +129,7 @@ export default function LoginForm() {
             <div className="rounded-[1rem] bg-bg_primary shadow-[8px_8px_16px_#cddbff]  flex items-center justify-center box-border w-full h-full">
               <button
                 onClick={handleSubmit}
-                className="relative bg-transparent border-none outline-none w-full h-full cursor-pointer text-white text-sm tracking-widest"
+                className="relative bg-transparent border-none outline-none w-full h-full cursor-pointer text-white text-sm font-lexend rounded-[1rem]"
               >
                 Login
               </button>
@@ -156,7 +156,7 @@ export default function LoginForm() {
           </div>
         </form>
       </div>
-      <div className="px-4 sm:px-10 lg:px-12 flex flex-col items-end justify-center text-sm text-text_secondary text-justify">
+      <div className="px-4 sm:px-10 lg:px-12 flex flex-col items-end justify-center text-sm text-text_secondary text-center">
         Lorem ipsum dolor sit amet consectetur. Ac in consequat sodales in ante
         in gravida
       </div>

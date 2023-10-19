@@ -9,10 +9,16 @@ body {
   font-family: "Lexend Deca", sans-serif;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
+  -webkit-font-smoothing: auto !important;
+  -moz-osx-font-smoothing: auto !important;
 }
 
 a {
   text-decoration: none;
+}
+
+p {
+  font-size: 14px;
 }
 
 input:focus {
