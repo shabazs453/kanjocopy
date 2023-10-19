@@ -2,9 +2,9 @@ import React from "react";
 
 const LoginHero = () => {
   return (
-    <div className="img-section flex-1 min-h-[100vh]  py-4 sm:py-6 lg:py-8 px-4 sm:px-10 lg:px-12 relative flex flex-col items-center bg-transparent">
+    <div className="img-section flex-1 min-h-[100vh] py-4 sm:py-6 lg:py-8 px-4 sm:px-10 lg:px-12 relative flex flex-col items-center bg-transparent">
       {/* image section */}
-      <div className="relative flex-[3] flex  justify-center items-center w-full">
+      <div className="relative flex-[4] flex  justify-center items-center w-full">
         <div className=" relative min-w-[20rem] md:w-[25rem] h-full flex items-end justify-center">
           <img
             className="absolute w-full h-full z-[3]"
@@ -20,9 +20,9 @@ const LoginHero = () => {
       </div>
 
       {/* cardcontainer */}
-      <div className=" rounded-xl bg-white box-border w-full xl:max-w-[76rem] flex-1 flex flex-col items-center justify-start py-[1.69rem]  px-[1.75rem] gap-[0.94rem]  border border-solid border-bg_body">
-        <div className="relative text-base text-center font-semibold">
-          <p className="m-0">
+      <div className=" rounded-xl bg-white box-border w-full xl:max-w-[76rem] flex-1 flex flex-col items-center justify-start py-[1.69rem]  px-[1.75rem] gap-[0.94rem]  border border-solid border-border_primary">
+        <div className="relative text-center font-semibold">
+          <p className="m-0 text-base">
             Your personalised toolbox for supporting children's mental health
           </p>
         </div>

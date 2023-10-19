@@ -10,6 +10,8 @@ const InputField = ({
   onChange,
   iconSrc,
   emailValidity,
+  passVisible,
+  setPassVisible,
 }) => (
   <div className="flex-1 flex items-center justify-center mt-8 h-[4.6rem] w-full">
     <div className="rounded-[1rem] bg-bg_input shadow-[0px_4px_32px_rgba(0,_0,_0,_0.04)] h-full w-full  flex items-center justify-between px-[1.06rem] gap-[1.06rem] border-[0.5px] border-solid border-border_primary">
@@ -31,17 +33,25 @@ const InputField = ({
           />
         </label>
       </div>
-      {type === "email" ? (
-        emailValidity === true && (
-          <img
-            className="relative w-[1.38rem] h-[1.38rem]"
-            alt=""
-            src="/icons/solidCheckIcon.svg"
-          />
-        )
-      ) : (
-        <></>
-      )}
+      {type === "email"
+        ? emailValidity === true && (
+            <img
+              className="relative w-[1.38rem] h-[1.38rem]"
+              alt=""
+              src="/icons/solidCheckIcon.svg"
+            />
+          )
+        : value &&
+          value?.split?.length > 0 && (
+            <img
+              className="relative w-[1.38rem] h-[1.38rem] cursor-pointer"
+              alt=""
+              src={`/icons/${
+                passVisible ? "closedSolarEyeBold" : "solarEyeBold"
+              }.svg`}
+              onClick={() => setPassVisible((prev) => !prev)}
+            />
+          )}
       {/* </div> */}
     </div>
   </div>
@@ -57,6 +67,8 @@ export default function LoginForm() {
   const [isEmailValid, setIsEmailValid] = useState(null);
   const [error, setError] = useState("");
 
+  const [passVisible, setPassVisible] = useState(false);
+
   function validateEmail(email) {
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
@@ -68,6 +80,9 @@ export default function LoginForm() {
     if (name === "email") {
       const emailvalidity = validateEmail(value);
       setIsEmailValid(emailvalidity);
+    }
+    if (name === "password") {
+      value === "" && setPassVisible(false);
     }
     setFormValues((prev) => ({ ...prev, [name]: value }));
   };
@@ -117,12 +132,14 @@ export default function LoginForm() {
           />
 
           <InputField
-            type="password"
+            type={passVisible ? "text" : "password"}
             name="password"
             placeholder="Password"
             value={formValues.password}
             onChange={handleChange}
             iconSrc="/icons/closedLockIcon.svg"
+            passVisible={passVisible}
+            setPassVisible={setPassVisible}
           />
 
           <div className="flex flex-col justify-center text-white mt-8 cursor-pointer items-center w-full h-[4rem]">
