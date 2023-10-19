@@ -16,7 +16,7 @@ module.exports = {
         color_primary: colors.blue[500],
         text_default: colors.slate[800],
         text_secondary: colors.slate[600],
-        text_muted: colors.slate[700],
+        text_muted: "#D9D9D9",
         bg_primary: colors.blue[500],
         bg_hover: colors.blue[700],
         bg_secondary: colors.blue[400],

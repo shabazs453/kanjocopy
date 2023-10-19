@@ -2,7 +2,7 @@ import React from "react";
 
 const LoginHero = () => {
   return (
-    <div className="img-section flex-1 min-h-[100vh]  py-4 sm:py-6 lg:py-8 px-4 sm:px-10 lg:px-12 relative flex flex-col items-center">
+    <div className="img-section flex-1 min-h-[100vh]  py-4 sm:py-6 lg:py-8 px-4 sm:px-10 lg:px-12 relative flex flex-col items-center bg-transparent">
 
 
       {/* image section */}
