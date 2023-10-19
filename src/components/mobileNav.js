@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const MobileNav = () => {
   return (
@@ -32,6 +32,6 @@ const MobileNav = () => {
       />
     </div>
   );
-}
+};
 
-export default MobileNav
+export default MobileNav;

@@ -26,9 +26,7 @@ const statisticData = [
 const StatisticBar = () => {
   return (
     <>
-      {/* Card Section */}
       <div className="max-w-[85rem] mx-auto ">
-        {/* Grid */}
         <div className="grid md:grid-cols-4 border border-solid border-border_primary shadow-md rounded-xl overflow-hidden ">
           {statisticData &&
             statisticData.length > 0 &&
@@ -42,9 +40,7 @@ const StatisticBar = () => {
               />
             ))}
         </div>
-        {/* End Grid */}
       </div>
-      {/* End Card Section */}
     </>
   );
 };

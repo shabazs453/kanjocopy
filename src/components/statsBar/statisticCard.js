@@ -17,11 +17,9 @@ const StatisticCard = ({ imageSrc, heading, count, currInd, lastIndex }) => {
           </h3>
         </div>
       </div>
-      {
-        currInd !== lastIndex && (
-          <div className="absolute right-0 w-[1px] h-[80%] bg-border_primary md:block hidden"/>
-        )
-      }
+      {currInd !== lastIndex && (
+        <div className="absolute right-0 w-[1px] h-[80%] bg-border_primary md:block hidden" />
+      )}
     </a>
   );
 };

@@ -3,19 +3,17 @@ import mongoose from "mongoose";
 const connection = {};
 
 (async function dbConnect() {
-    if (connection.isConnected) {
-        return;
-    }
+  if (connection.isConnected) {
+    return;
+  }
 
-    try {
-        const db = await mongoose.connect(process.env.MONGO_URI, {
+  try {
+    const db = await mongoose.connect(process.env.MONGO_URI, {});
 
-        });
+    connection.isConnected = db.connections[0].readyState;
 
-        connection.isConnected = db.connections[0].readyState;
-
-        console.log("MongoDb Connected");
-    } catch (error) {
-        console.log(error)
-    }
+    console.log("MongoDb Connected");
+  } catch (error) {
+    console.log(error);
+  }
 })();
