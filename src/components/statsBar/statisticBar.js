@@ -27,9 +27,9 @@ const StatisticBar = () => {
   return (
     <>
       {/* Card Section */}
-      <div className="max-w-[85rem] px-4  sm:px-6 lg:px-8  mx-auto ">
+      <div className="max-w-[85rem] mx-auto ">
         {/* Grid */}
-        <div className="grid md:grid-cols-4 border border-solid border-slate-100 shadow-md rounded-xl overflow-hidden ">
+        <div className="grid md:grid-cols-4 border border-solid border-border_primary shadow-md rounded-xl overflow-hidden ">
           {statisticData &&
             statisticData.length > 0 &&
             statisticData.map((stats, index) => (
@@ -37,7 +37,8 @@ const StatisticBar = () => {
                 imageSrc={stats.imageSrc}
                 heading={stats.label}
                 count={stats.count}
-                borderRight= {index !== statisticData.length - 1 ? 'border-r-2 border-solid border-slate-100' : ''}
+                currInd={index}
+                lastIndex={statisticData && statisticData?.length - 1}
               />
             ))}
         </div>

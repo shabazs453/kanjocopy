@@ -30,7 +30,7 @@ input[type="password"]::-webkit-credentials-auto-fill-button:focus {
   display: none !important;
 }
 
-input {
+input:focus {
   outline: none;
 }
 

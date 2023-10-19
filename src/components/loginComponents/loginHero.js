@@ -4,7 +4,7 @@ const LoginHero = () => {
   return (
     <div className="img-section flex-1 min-h-[100vh] py-4 sm:py-6 lg:py-8 px-4 sm:px-10 lg:px-12 relative flex flex-col items-center bg-transparent">
       {/* image section */}
-      <div className="relative flex-[4] flex  justify-center items-center w-full">
+      <div className="relative flex-[5] flex  justify-center items-center w-full">
         <div className=" relative min-w-[20rem] md:w-[25rem] h-full flex items-end justify-center">
           <img
             className="absolute w-full h-full z-[3]"

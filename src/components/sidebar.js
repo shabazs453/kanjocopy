@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 
 const sidebarItems = [
   {
@@ -8,7 +9,7 @@ const sidebarItems = [
     subItems: [
       {
         label: "Patients",
-        iconSrc: "/icons/personAddWhiteIcon.svg",
+        iconSrc: "/icons/addPerson.svg",
         to: "/patiens",
       },
     ],
@@ -41,7 +42,15 @@ const sidebarItems = [
   // Other menu items can be added here if needed
 ];
 
+const intialMenuItemHoverState = {
+  isHover: false,
+  menuInd: null,
+  menuItemInd: null,
+};
+
 const Sidebar = () => {
+  const [menuItemHover, setMenuItemHover] = useState(intialMenuItemHoverState);
+  console.log(menuItemHover);
   return (
     <div
       id="application-sidebar"
@@ -65,25 +74,42 @@ const Sidebar = () => {
           {sidebarItems &&
             sidebarItems.length > 0 &&
             sidebarItems.map((sidebarItem, index) => (
-              <>
-                <div className=" ml-[1.25rem] my-4 text-gray-200 uppercase">
+              <div>
+                <div className="ml-[1.25rem] my-4 text-text_default uppercase">
                   {sidebarItem.label}
                 </div>
                 {sidebarItem.subItems.length > 0 &&
-                  sidebarItem.subItems.map((subItem, index) => (
+                  sidebarItem.subItems.map((subItem, subItemInd) => (
                     <Link
                       href={subItem.to}
-                      className="text-grey w-full pl-[1.25rem] py-[0.8rem] flex items-center my-2 rounded-md hover:bg-royalblue-100 hover:text-white cursor-pointer "
+                      className="text-grey w-full pl-[1.25rem] py-[0.8rem] flex items-center my-2 rounded-md hover:bg-bg_primary text-text_secondary hover:text-white cursor-pointer"
+                      onMouseOver={() =>
+                        setMenuItemHover({
+                          isHover: true,
+                          menuInd: index,
+                          menuItemInd: subItemInd,
+                        })
+                      }
+                      onMouseOut={() =>
+                        setMenuItemHover(intialMenuItemHoverState)
+                      }
                     >
                       <img
-                        className=" h-[1rem] w-[1rem]  max-w-full overflow-hidden max-h-full"
+                        className="h-[1rem] w-[1rem]  max-w-full overflow-hidden max-h-full"
+                        style={{
+                          filter:
+                            menuItemHover?.isHover &&
+                            menuItemHover?.menuInd === index &&
+                            menuItemHover.menuItemInd === subItemInd &&
+                            "brightness(0) invert(1)",
+                        }}
                         alt=""
                         src={subItem.iconSrc}
                       />
-                      <div className="flex-1 ml-3">{subItem.label}</div>
+                      <div className="flex-1 ml-3 ">{subItem.label}</div>
                     </Link>
                   ))}
-              </>
+              </div>
             ))}
         </nav>
       </div>
