@@ -9,7 +9,7 @@ const SearchBox = ({ placeholder }) => {
       <div class="relative">
         <input
           type="text"
-          class="py-2 px-3 pl-11 block w-full border-border_primary rounded-lg text-sm bg-bg_input placeholder:text-text_default"
+          class="py-2 px-3 pl-11 block w-full border-border_primary rounded-lg text-sm bg-bg_input placeholder:text-text_default focus:outline-none"
           placeholder={placeholder}
         />
         <div class="absolute inset-y-0 left-0 flex items-center pointer-events-none pl-4">
