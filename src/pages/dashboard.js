@@ -1,6 +1,7 @@
 import MobileNav from "@/components/mobileNav";
+import PatientsListing from "@/components/PatientsListing/patientsListing";
 import Sidebar from "@/components/sidebar";
-import StatisticBar from "@/components/statsBar/statisticBar";
+import StatisticBar from "@/components/StatsBar/statisticBar";
 
 const dashboard = () => {
   return (
@@ -13,6 +14,11 @@ const dashboard = () => {
         <header>
           <StatisticBar />
         </header>
+      </div>
+      <div className="flex-auto py-10 px-4 sm:px-6 md:px-8 lg:pl-72">
+        <section>
+          <PatientsListing />
+        </section>
       </div>
     </>
   );
