@@ -1,4 +1,5 @@
 "use client";
+
 const PrimaryButton = ({btnLabel}) => {
   return (
     <button

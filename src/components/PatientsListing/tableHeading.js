@@ -1,7 +1,7 @@
 "use Client";
 
-import PrimaryButton from "../gloabalComponents/primaryButton";
-import SearchBox from "../gloabalComponents/searchBox";
+import PrimaryButton from "../globalComponents/primaryButton";
+import SearchBox from "../globalComponents/searchBox";
 
 const TableHeading = ({ heading, btnLabel }) => {
   return (
