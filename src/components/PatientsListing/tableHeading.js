@@ -10,7 +10,7 @@ const TableHeading = ({ heading, btnLabel }) => {
         <p className="text-[1.125rem]">{heading}</p>
       </div>
       <div className="w-full lg:w-max">
-        <div className="inline-flex gap-x-4 w-full">
+        <div className="inline-flex flex-col sm:flex-row gap-4 sm:gap-x-4  w-full">
           <SearchBox placeholder={"Search by patients name"} />
           <PrimaryButton btnLabel={btnLabel} />
         </div>

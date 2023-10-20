@@ -8,7 +8,7 @@ const menuSubItems = [
   {
     label: "Patients",
     iconSrc: "/icons/addPerson.svg",
-    to: "/patiens",
+    to: "/patients",
   },
 ];
 
@@ -52,7 +52,7 @@ const Sidebar = () => {
       className="hs-overlay hs-overlay-open:translate-x-0 -translate-x-full transition-all duration-300 transform hidden fixed top-0 left-0 bottom-0 z-[60] w-64 px-6 py-7 bg-bg_body border-r border-gray-200 overflow-y-auto scrollbar-y lg:block lg:translate-x-0 lg:right-auto lg:bottom-0"
     >
       <div className="h-full w-full flex flex-col justify-between">
-        <div className="w-full text-grey flex flex-col items-end ">
+        <div className="w-full flex flex-col items-end ">
           <div className=" w-full flex justify-start">
             <a
               className="flex-none text-xl font-semibold dark:text-white"
@@ -76,7 +76,7 @@ const Sidebar = () => {
                 menuSubItems.map((subItem, subItemInd) => (
                   <Link
                     href={subItem.to}
-                    className="text-grey w-full pl-[1.25rem] py-[0.8rem] flex items-center my-2 rounded-md hover:bg-bg_primary text-text_secondary hover:text-white cursor-pointer"
+                    className="w-full pl-[1.25rem] py-[0.8rem] flex items-center my-2 rounded-md hover:bg-bg_primary text-text_secondary hover:text-white cursor-pointer"
                     onMouseOver={() =>
                       setMenuItemHover({
                         isHover: true,

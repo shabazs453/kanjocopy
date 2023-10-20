@@ -34,10 +34,6 @@ input:focus {
   outline: none;
 }
 
-.icon-text_default {
- filter: invert(11%) sepia(39%) saturate(753%) hue-rotate(177deg) brightness(94%) contrast(88%);
-}
-
 *,
 ::before,
 ::after {

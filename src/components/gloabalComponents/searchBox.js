@@ -2,11 +2,11 @@
 
 const SearchBox = ({ placeholder }) => {
   return (
-    <div class="flex-auto lg:w-72 overflow-hidden">
+    <div class="flex-auto lg:w-72 overflow-hidden rounded-lg">
       <label for="text-sm" class="sr-only">
         Search
       </label>
-      <div class="relative">
+      <div class="relative rounded-lg">
         <input
           type="text"
           class="py-2 px-3 pl-11 block w-full border-border_primary rounded-lg text-sm bg-bg_input placeholder:text-text_default focus:outline-none"
