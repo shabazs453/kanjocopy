@@ -9,7 +9,7 @@ const dashboard = () => {
         <MobileNav />
       </div>
       <Sidebar />
-      <div className="flex-auto pt-10 px-4 sm:px-6 md:px-8 lg:pl-[17rem]">
+      <div className="flex-auto pt-10 px-4 sm:px-6 md:px-8 lg:pl-72">
         <header>
           <StatisticBar />
         </header>

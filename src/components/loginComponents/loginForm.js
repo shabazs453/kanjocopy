@@ -17,7 +17,7 @@ const InputField = ({
     <div className="rounded-[1rem] bg-bg_input shadow-[0px_4px_32px_rgba(0,_0,_0,_0.04)] h-full w-full  flex items-center justify-between px-[1.06rem] gap-[1.06rem] border-[0.5px] border-solid border-border_primary">
       <img className="relative w-[27px] h-[27px]" alt="" src={iconSrc} />
       {/* <div className="flex-auto flex items-center h-full w-auto"> */}
-      <div className="relative bg-text_muted w-[1px] h-[2.25rem]" />
+      <div className="relative bg-border_primary w-[1px] h-[2.25rem]" />
       <div className="flex-1 h-[2.5rem] relative">
         <label className="h-full">
           <span className="absolute top-[0rem] left-0 text-[0.75rem] z-[3]">
