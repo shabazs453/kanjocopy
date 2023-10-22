@@ -1,12 +1,20 @@
+"use client";
+
+import AddEditPatientForm from "@/components/AddEditPatientForm/form";
+import FormLayout from "@/components/formLayout";
 import MobileNav from "@/components/mobileNav";
 import PatientsListing from "@/components/PatientsListing/patientsListing";
 import Sidebar from "@/components/sidebar";
 import StatisticBar from "@/components/StatsBar/statisticBar";
+import { useState } from "react";
 
 const dashboard = () => {
+  const [openAddPatientForm, setOpenAddPatientForm] = useState(false);
+  const [openEditPatientForm, setOpenEditPatientForm] = useState(false);
+
   return (
-    <>
-      <div className="sticky top-0 inset-x-0 z-20 bg-white border-y px-4 sm:px-6 md:px-8 lg:hidden dark:bg-gray-800 dark:border-gray-700">
+    <div className="relative">
+      <div className="sticky top-0 inset-x-0 z-20 bg-white border-y px-4 sm:px-6 md:px-8 lg:hidden ">
         <MobileNav />
       </div>
       <Sidebar />
@@ -17,10 +25,39 @@ const dashboard = () => {
       </div>
       <div className="flex-auto py-10 px-4 sm:px-6 md:px-8 lg:pl-72">
         <section>
-          <PatientsListing />
+          <PatientsListing
+            addPatientForm={() => setOpenAddPatientForm(true)}
+            editPatientForm={() => setOpenEditPatientForm(true)}
+          />
         </section>
       </div>
-    </>
+      <div
+        className={`w-full h-full ${
+          openAddPatientForm
+            ? "block"
+            : openEditPatientForm
+            ? "block"
+            : "hidden"
+        } opacity-50 bg-text_default absolute top-0 left-0 z-[61]`}
+        onClick={() => {
+          setOpenAddPatientForm(false);
+          setOpenEditPatientForm(false);
+        }}
+      />
+      <FormLayout
+        formContent={<AddEditPatientForm />}
+        formTitle="Add Patient"
+        open={openAddPatientForm}
+        closeForm={() => setOpenAddPatientForm(false)}
+      />
+
+      <FormLayout
+        formContent={<AddEditPatientForm />}
+        formTitle="Edit Patient"
+        open={openEditPatientForm}
+        closeForm={() => setOpenEditPatientForm(false)}
+      />
+    </div>
   );
 };
 

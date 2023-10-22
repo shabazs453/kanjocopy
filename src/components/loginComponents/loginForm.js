@@ -93,7 +93,7 @@ export default function LoginForm() {
 
   return (
     <div className="flex-1 h-full min-h-[100vh] bg-white flex flex-col items-center justify-between py-4 sm:py-6 lg:py-8 px-4 sm:px-10 lg:px-12 relative">
-      <div className=" w-full flex justify-end">
+      <div className=" w-full flex justify-center lg:justify-end">
         <img
           className="relative  h-[2.12rem] object-cover"
           alt=""

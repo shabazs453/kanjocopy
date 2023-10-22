@@ -92,7 +92,7 @@ const peopleData = [
 //   },
 ];
 
-const TableContent = () => {
+const TableContent = ({ editPatientForm }) => {
   return (
     <>
       <table className="min-w-full mt-10 border-collapse border-spacing-0">
@@ -169,13 +169,15 @@ const TableContent = () => {
                     <span className="block">{item.createdAt}</span>
                   </div>
                 </td>
+
+                {/* action column */}
                 <td className="whitespace-nowrap border-y-[0.5px] border-solid border-border_primary">
                   <div className="px-6 py-6 flex justify-between items-center">
-                    <div className="flex items-center justify-center cursor-pointer">
-                      <img className="w-5 h-5" src="/icons/editMenuIcon.svg"/>
+                    <div className="flex items-center justify-center cursor-pointer" onClick={editPatientForm}>
+                      <img className="w-5 h-5" src="/icons/editMenuIcon.svg" />
                     </div>
                     <div className="flex items-center justify-center cursor-pointer">
-                      <img className="w-5 h-5" src="/icons/reportIcon.svg"/>
+                      <img className="w-5 h-5" src="/icons/reportIcon.svg" />
                     </div>
                   </div>
                 </td>

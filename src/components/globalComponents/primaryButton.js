@@ -1,10 +1,10 @@
 "use client";
 
-const PrimaryButton = ({btnLabel}) => {
+const PrimaryButton = ({ btnLabel, onClickFunc }) => {
   return (
     <button
-      className="py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-bg_primary text-white hover:bg-bg_hover focus:outline-none  transition-all text-sm"
-      href="#"
+      className="py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-bg_primary text-white hover:bg-bg_hover focus:outline-none  transition-all text-sm cursor-pointer"
+      onClick={onClickFunc}
     >
       <svg
         className="w-3 h-3"

@@ -3,7 +3,7 @@
 import TableContent from "./tableContent";
 import TableHeading from "./tableHeading";
 
-const PatientsListing = () => {
+const PatientsListing = ({ addPatientForm, editPatientForm }) => {
   return (
     <>
       <div className="max-w-[85rem] text-text_default m-auto">
@@ -13,9 +13,10 @@ const PatientsListing = () => {
               <TableHeading
                 heading={"Patients Listing"}
                 btnLabel={"Add Patient"}
+                onClickFunc={addPatientForm}
               />
               <div className="overflow-x-auto">
-                <TableContent />
+                <TableContent editPatientForm={editPatientForm} />
               </div>
             </div>
           </div>
