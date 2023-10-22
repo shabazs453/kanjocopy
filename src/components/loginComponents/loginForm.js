@@ -1,5 +1,7 @@
 "use client";
 
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 const InputField = ({
@@ -58,25 +60,25 @@ const InputField = ({
 );
 
 export default function LoginForm() {
-  // const [isSignUp, setIsSignUp] = useState(false);
-  // const [name, setName] = useState("");
   const [formValues, setFormValues] = useState({
     email: "",
     password: "",
   });
   const [isEmailValid, setIsEmailValid] = useState(null);
-  const [error, setError] = useState("");
-
+  const [errors, setErrors] = useState(null);
   const [passVisible, setPassVisible] = useState(false);
 
+  const router = useRouter();
+
   function validateEmail(email) {
-    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     return emailPattern.test(email);
   }
 
   const handleChange = (evt) => {
     const { value, name } = evt.target;
+    setErrors(null);
     if (name === "email") {
       const emailvalidity = validateEmail(value);
       setIsEmailValid(emailvalidity);
@@ -89,6 +91,38 @@ export default function LoginForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const newErrors = {
+      email: "",
+      password: "",
+    };
+
+    if (!formValues.email) {
+      newErrors.email = "Email is required";
+    } else if (!isEmailValid) {
+      newErrors.email = "Email is not valid";
+    }
+    if (!formValues.password) {
+      newErrors.password = "Password is required";
+    }
+    setErrors(newErrors);
+    if (Object.values(newErrors).every((error) => error === "")) {
+      try {
+        const result = await signIn("credentials", {
+          username: formData.email,
+          password: formData.password,
+          redirect: false, // Set to true if you want to redirect after successful login
+        });
+
+        if (!result.error) {
+          router.push("/dashboard");
+        } else {
+          console.log(result.error);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
   };
 
   return (
@@ -111,16 +145,6 @@ export default function LoginForm() {
           </p>
         </div>
         <form className="w-full md:max-w-[25rem] 2xl:max-w-[76rem]">
-          {/* {isSignUp && (
-          <InputField
-            type="text"
-            placeholder="Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            iconSrc="/icons/personIcon.svg"
-          />
-        )} */}
-
           <InputField
             type="email"
             name="email"
@@ -129,7 +153,16 @@ export default function LoginForm() {
             onChange={handleChange}
             iconSrc="/icons/openEmailIcon.svg"
             emailValidity={isEmailValid}
+            erorr={errors}
           />
+          {errors?.email && (
+            <p
+              class="text-sm text-bg_danger mt-2"
+              id="hs-validation-name-error-helper"
+            >
+              {errors.email}
+            </p>
+          )}
 
           <InputField
             type={passVisible ? "text" : "password"}
@@ -140,7 +173,16 @@ export default function LoginForm() {
             iconSrc="/icons/closedLockIcon.svg"
             passVisible={passVisible}
             setPassVisible={setPassVisible}
+            erorr={errors}
           />
+          {errors?.password && (
+            <p
+              class="text-sm text-bg_danger mt-2"
+              id="hs-validation-name-error-helper"
+            >
+              {errors.password}
+            </p>
+          )}
 
           <div className="flex flex-col justify-center text-white mt-8 cursor-pointer items-center w-full h-[4rem]">
             <div className="rounded-[1rem] bg-bg_primary hover:bg-bg_hover shadow-[8px_8px_16px_#cddbff]  flex items-center justify-center box-border w-full h-full">
@@ -151,25 +193,6 @@ export default function LoginForm() {
                 Login
               </button>
             </div>
-            {error && (
-              <div className="bg-red-500 text-white w-fit text-sm py-1 px-3 rounded-md mt-2">
-                {error}
-              </div>
-            )}
-            {/* {
-            !isSignUp && (
-              <p className="text-sm mt-3 text-right text-royalblue-100" onClick={() => setIsSignUp((prev) => !prev)}>
-              Don't have an account? <span className="underline">Register</span>
-            </p>
-            )
-          } */}
-            {/* {
-            isSignUp && (
-              <p className="text-sm mt-3 text-right text-royalblue-100" onClick={() => setIsSignUp((prev) => !prev)}>
-              Already a user? <span className="underline">Login</span>
-            </p>
-            )
-          } */}
           </div>
         </form>
       </div>
