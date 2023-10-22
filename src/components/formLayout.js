@@ -1,4 +1,3 @@
-import React from "react";
 
 const FormLayout = ({ open, closeForm, formTitle, formContent }) => {
   return (

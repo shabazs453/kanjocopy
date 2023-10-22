@@ -5,23 +5,22 @@ import FormInput from "../globalComponents/formInput";
 import FormTextarea from "../globalComponents/formTextarea";
 
 const initialFormData = {
-  firstName: '',
-  lastName: '',
-  gender: '',
-  age: '',
-  parentName: '',
-  contact: '',
-  email: '',
-  address: '',
-}
+  firstName: "",
+  lastName: "",
+  gender: "",
+  age: "",
+  parentName: "",
+  contact: "",
+  email: "",
+  address: "",
+};
 
 const AddEditPatientForm = () => {
-  const [formValues, setFormValues] = useState(initialFormData)
+  const [formValues, setFormValues] = useState(initialFormData);
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     const { value, name } = e.target;
-
   };
 
   const handleSubmit = (e) => {
@@ -81,27 +80,26 @@ const AddEditPatientForm = () => {
               Gender
               <span className="text-bg_danger ml-1">&#x2a;</span>
             </label>
-            <div class="flex h-full w-full items-center gap-8">
-              <div class="flex items-center py-3">
+            <div className="flex h-full w-full items-center gap-8">
+              <div className="flex items-center py-3">
                 <input
                   type="radio"
                   name="gender"
-                  class="rounded-full focus:ring-0"
+                  className="rounded-full focus:ring-0"
                   id="gender_male"
                   checked
                 />
-                <label for="gender_male" class="text-sm text-gray-500 ml-2">
+                <label for="gender_male" className="text-sm text-gray-500 ml-2">
                   Male
                 </label>
               </div>
 
-              <div class="flex items-center py-3">
+              <div className="flex items-center py-3">
                 <input
                   type="radio"
                   name="gender"
-                  class="rounded-full focus:ring-0"
-                  id=""
-                  gender_female
+                  className="rounded-full focus:ring-0"
+                  id="gender_female"
                 />
                 <label
                   for=""
@@ -171,8 +169,12 @@ const AddEditPatientForm = () => {
       </div>
 
       <div className="mt-8 w-full flex justify-center items-center gap-4">
-        <button className="py-3 px-4 rounded-lg text-sm font-lexend text-text_default bg-white">Reset</button>
-        <button className="py-3 px-4 rounded-lg text-sm font-lexend text-white bg-text_secondary">Save</button>
+        <button className="py-3 px-4 rounded-lg text-sm font-lexend text-text_default bg-white">
+          Reset
+        </button>
+        <button className="py-3 px-4 rounded-lg text-sm font-lexend text-white bg-text_secondary">
+          Save
+        </button>
       </div>
     </div>
   );
