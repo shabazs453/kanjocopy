@@ -1,5 +1,8 @@
 "use client";
 
+// import { useRouter } from "next/router";
+// import { useSession } from "next-auth/react";
+
 import AddEditPatientForm from "@/components/AddEditPatientForm/form";
 import FormLayout from "@/components/formLayout";
 import MobileNav from "@/components/mobileNav";
@@ -12,12 +15,20 @@ const dashboard = () => {
   const [openAddPatientForm, setOpenAddPatientForm] = useState(false);
   const [openEditPatientForm, setOpenEditPatientForm] = useState(false);
 
+  // const { data: session } = useSession();
+  // const router = useRouter();
+
+  // if (!session) {
+  //   router.push('/')
+  //   return null;
+  // }
+
   return (
     <div className="relative">
       <div className="sticky top-0 inset-x-0 z-20 bg-white border-y px-4 sm:px-6 md:px-8 lg:hidden ">
         <MobileNav />
       </div>
-      <Sidebar />
+        <Sidebar />
       <div className="flex-auto pt-10 px-4 sm:px-6 md:px-8 lg:pl-72">
         <header>
           <StatisticBar />

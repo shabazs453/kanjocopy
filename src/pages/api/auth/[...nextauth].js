@@ -1,5 +1,6 @@
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
+import bcrypt from "bcryptjs";
 import User from "../../../../models/user";
 import "@/lib/mongodb";
 
@@ -16,10 +17,10 @@ export const authOptions = {
         const { email, password } = credentials;
 
         try {
-          const user = await User.findOne({ email });
+          const user = await User.find({ email: email });
 
-            if (!user) {
-              console.log("Couldn't find user");
+          if (!user) {
+            console.log("Couldn't find user");
             return null;
           }
           console.log(user);

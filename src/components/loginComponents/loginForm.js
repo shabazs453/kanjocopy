@@ -109,8 +109,8 @@ export default function LoginForm() {
     if (Object.values(newErrors).every((error) => error === "")) {
       try {
         const result = await signIn("credentials", {
-          username: formData.email,
-          password: formData.password,
+          username: formValues.email,
+          password: formValues.password,
           redirect: false, // Set to true if you want to redirect after successful login
         });
 

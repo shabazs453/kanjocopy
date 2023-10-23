@@ -2,19 +2,19 @@
 
 const SearchBox = ({ placeholder }) => {
   return (
-    <div class="flex-auto lg:w-72 overflow-hidden rounded-lg">
-      <label for="text-sm" class="sr-only">
+    <div className="flex-auto lg:w-72 overflow-hidden rounded-lg">
+      <label for="text-sm" className="sr-only">
         Search
       </label>
-      <div class="relative rounded-lg">
+      <div className="relative rounded-lg">
         <input
           type="text"
-          class="py-2 px-3 pl-11 block w-full border-border_primary rounded-lg text-sm bg-bg_input placeholder:text-text_default focus:outline-none"
+          className="py-2 px-3 pl-11 block w-full border-border_primary rounded-lg text-sm bg-bg_input placeholder:text-text_default focus:outline-none"
           placeholder={placeholder}
         />
-        <div class="absolute inset-y-0 left-0 flex items-center pointer-events-none pl-4">
+        <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none pl-4">
           <svg
-            class="h-4 w-4 text-text_default"
+            className="h-4 w-4 text-text_default"
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"

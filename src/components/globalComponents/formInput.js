@@ -3,17 +3,17 @@
 const FormInput = ({ name, type, label, placeholder, defaultValue, onChangeFunc, error }) => {
   return (
     <div>
-      <label for={name} class="block text-sm font-medium mb-2 relative">
+      <label for={name} className="block text-sm font-medium mb-2 relative">
         {label}
         <span className="text-bg_danger ml-1">&#x2a;</span>
       </label>
-      <div class="relative">
+      <div className="relative">
         <input
           type={type}
           id={name}
           name={name}
           //   value={defaultValue}
-          class="py-3 px-4 block w-full border-[0.5px] border-border_primary bg-bg_input rounded-md text-sm focus:outline-none"
+          className="py-3 px-4 block w-full border-[0.5px] border-border_primary bg-bg_input rounded-md text-sm focus:outline-none"
           required
           // aria-describedby="hs-validation-name-error-helper"
           placeholder={placeholder}
@@ -22,7 +22,7 @@ const FormInput = ({ name, type, label, placeholder, defaultValue, onChangeFunc,
       </div>
       {error[name] && (
         <p
-          class="text-sm text-red-600 mt-2"
+          className="text-sm text-red-600 mt-2"
           id="hs-validation-name-error-helper"
         >
           Please enter a valid email address.

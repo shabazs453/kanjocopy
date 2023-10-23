@@ -45,8 +45,8 @@ const AddEditPatientForm = () => {
     }
   };
   return (
-    <div class="p-4 sm:px-10 md:px-12 text-text_default">
-      <p class="text-text_secondary">
+    <div className="p-4 sm:px-10 md:px-12 text-text_default">
+      <p className="text-text_secondary">
         Some text as placeholder. In real life you can have the elements you
         have chosen. Like, text, images, lists, etc.
       </p>
@@ -76,7 +76,7 @@ const AddEditPatientForm = () => {
         </div>
         <div className="col-span-2 sm:col-span-1">
           <div>
-            <label for="gender" class="block text-sm font-medium mb-2 relative">
+            <label for="gender" className="block text-sm font-medium mb-2 relative">
               Gender
               <span className="text-bg_danger ml-1">&#x2a;</span>
             </label>
@@ -103,7 +103,7 @@ const AddEditPatientForm = () => {
                 />
                 <label
                   for=""
-                  class="text-sm text-gray-500 ml-2 dark:text-gray-400"
+                  className="text-sm text-gray-500 ml-2 dark:text-gray-400"
                 >
                   Female
                 </label>
